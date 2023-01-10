@@ -1,8 +1,9 @@
 # external-database-operator
-// TODO(user): Add simple overview of use/purpose
+Used to manage external database with operator installed in cluster.
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+Work in progress. Currently works only locally with `make install run command` and allows to create database and role in postgres.
+
 
 ## Getting Started
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
@@ -40,10 +41,6 @@ UnDeploy the controller to the cluster:
 ```sh
 make undeploy
 ```
-
-## Contributing
-// TODO(user): Add detailed information on how you would like others to contribute to this project
-
 ### How it works
 This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 
@@ -56,8 +53,15 @@ which provides a reconcile function responsible for synchronizing resources unti
 ```sh
 make install
 ```
-
-2. Run your controller (this will run in the foreground, so switch to a new terminal if you want to leave it running):
+3. Set environment variables:
+```sh
+DB_HOST=127.0.0.1
+DB_PORT=9200
+DB_USER=User
+DB_PASS=Password
+DB_NAME=NameOfDatabaseToConnectTo
+```
+4. Run your controller (this will run in the foreground, so switch to a new terminal if you want to leave it running):
 
 ```sh
 make run

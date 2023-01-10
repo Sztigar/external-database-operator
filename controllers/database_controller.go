@@ -67,7 +67,7 @@ func (r *DatabaseReconciler) Reconcile(ctx context.Context, req ctrl.Request) (c
 	}
 
 	//Connecting to database
-	pg, err := postgres.New(os.Getenv("PG_HOST"), os.Getenv("PG_PORT"), os.Getenv("PG_USER"), os.Getenv("PG_PASSWORD"), os.Getenv("DB_NAME"), logger)
+	pg, err := postgres.New(os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"), logger)
 	if err != nil {
 		logger.Error(err, "Error connecting to database")
 	}
