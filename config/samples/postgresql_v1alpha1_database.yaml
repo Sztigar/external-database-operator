@@ -1,0 +1,12 @@
+apiVersion: postgresql.my.domain/v1alpha1
+kind: Database
+metadata:
+  labels:
+    app.kubernetes.io/name: database
+    app.kubernetes.io/instance: database-sample
+    app.kubernetes.io/part-of: external-database-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: external-database-operator
+  name: database-sample
+spec:
+  name: database
